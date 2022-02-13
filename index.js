@@ -17,4 +17,12 @@ server.get("/", (req, res) => {
   res.send("Main Page");
 });
 
+server.get("/second", (req, res) => {
+  res.send("Second Page");
+});
+
+server.get("/third", (req, res) => {
+  res.send("third page");
+});
+
 console.log("borya pitux");
