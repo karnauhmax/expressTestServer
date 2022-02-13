@@ -16,3 +16,5 @@ server.get("/", (req, res) => {
 server.get("/", (req, res) => {
   res.send("Main Page");
 });
+
+console.log("borya pitux");
