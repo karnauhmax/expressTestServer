@@ -9,7 +9,9 @@
     "deploy:prod": "firebase use trulink-9c2e2 && firebase deploy --only functions",
     "deploy:dev": "firebase use trulink-dev-c8384 && firebase deploy --only functions",
     "deploy-api:prod": "firebase use trulink-9c2e2 && firebase deploy --only functions:api",
-    "deploy-api:dev": "firebase use trulink-dev-c8384 && firebase deploy --only functions:api"
+    "deploy-api:dev": "firebase use trulink-dev-c8384 && firebase deploy --only functions:api",
+    "serve": "nodemon index.js",
+    "start": "node index.js"
   },
   "engines": {
     "node": "10"
@@ -23,6 +25,7 @@
     "@types/swagger-ui-express": "^4.1.2",
     "base-64": "^0.1.0",
     "bcrypt": "^5.0.1",
+    "colors": "^1.4.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-multipart-file-parser": "^0.1.2",
@@ -37,11 +40,16 @@
     "noble-bls12-381": "^0.9.0",
     "node-fetch": "^2.6.0",
     "nodemailer": "^6.4.10",
+    "nodemon": "^2.0.15",
     "path": "^0.12.7",
     "randomatic": "^3.1.1",
     "swagger-ui-express": "^4.1.6"
   },
   "devDependencies": {
+    "@babel/cli": "^7.17.3",
+    "@babel/core": "^7.17.4",
+    "@babel/node": "^7.16.8",
+    "@babel/preset-env": "^7.16.11",
     "@types/base-64": "^0.1.3",
     "@types/bcrypt": "^3.0.0",
     "@types/cors": "^2.8.6",

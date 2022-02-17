@@ -1,28 +1,21 @@
 const express = require("express");
 const server = express();
-
 const path = require("path");
-
 const port = 3000;
+const middleWare = require("./middleware.js");
 
-server.listen(port, () => {
-  console.log(`Стартанули наш сервер на порте ${port}`);
-});
+server.use(express.static(path.resolve(__dirname, "pages")));
+server.use("/", middleWare);
 
 server.get("/", (req, res) => {
   res.sendFile(path.resolve(__dirname, "index.html"));
 });
 
-server.get("/", (req, res) => {
-  res.send("Main Page");
+server.listen(port, () => {
+  console.log(`Server's port is localhost:${port}`);
 });
 
-server.get("/second", (req, res) => {
-  res.send("Second Page");
+server.get("/download", (req, res) => {
+  console.log(req.requestTime);
+  res.download(path.resolve(__dirname, "index.html"));
 });
-
-server.get("/third", (req, res) => {
-  res.send("third page");
-});
-
-console.log("borya pitux");
