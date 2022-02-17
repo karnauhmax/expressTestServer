@@ -16,6 +16,5 @@ server.listen(port, () => {
 });
 
 server.get("/download", (req, res) => {
-  console.log(req.requestTime);
   res.download(path.resolve(__dirname, "index.html"));
 });
