@@ -8,7 +8,7 @@ server.use(express.static(path.resolve(__dirname, "pages")));
 server.use("/", middleWare);
 
 server.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "index.html"));
+  res.sendFile(path.resolve(__dirname, "access.json"));
 });
 
 server.listen(port, () => {
@@ -16,5 +16,5 @@ server.listen(port, () => {
 });
 
 server.get("/download", (req, res) => {
-  res.download(path.resolve(__dirname, "index.html"));
+  res.download(path.resolve(__dirname, "access.json"));
 });
